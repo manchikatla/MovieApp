@@ -1,0 +1,2 @@
+module ActordetailsHelper
+end

@@ -1,0 +1,34 @@
+<div class="formstyle">
+<h1> Edit the Actor details</h1>
+
+<%= form_for @actordetail do |f| %>
+		<% if @actordetail.errors.any? %>
+			<h2> Errors: </h2>
+			<ul>
+				<% @actordetail.errors.full_messages.each do |message| %>
+					<li class="errorclass"> <%= message %></li>
+				<% end %>
+				</ul>
+
+				<% end %>
+	<p class="formedit">
+		<%= f.label :Actor_Name %>
+		<%= f.text_field :name %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Gender %>
+		<%= f.text_field :gender %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :BirthDay %>
+		<%= f.text_field :dob %> 
+	</p>
+	
+	<p class="formedit">
+		<%= f.submit "Edit the Actor" %><br>
+		 
+	</p>
+	<% end %>
+</div>

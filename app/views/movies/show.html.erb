@@ -1,0 +1,11 @@
+	<ul>
+		<li class="show"><b>Movie Title:</b> <%= @movie.title %> </li>
+	<li class="show"> <b>Movie Director :</b><%= @movie.director %> </li>
+	<li class="show"> <b>Movie Actor:</b><%= @movie.actor %> </li>
+	<li class="show"> <b>Released On :</b><%= @movie.year %> </li>
+	<li class="show"> <b>Genre :</b><%= @movie.genre %> </li>
+	<li class="show"> <b>Runtime in Mins :</b><%=  @movie.runtime %> </li>
+	<li class="show"> <b>Rating :</b><%= @movie.rating  %> </li>
+
+	<li class="show"><%= @movie.created_at %></li>
+</ul>

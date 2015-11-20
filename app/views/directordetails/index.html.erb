@@ -1,0 +1,27 @@
+<div id="header">
+	<ul>
+	 <li class="onetype"> <span><a href="/movies" > Movies List</a></span></li>
+	<li class="onetype"> <span><a href="/actordetails" > Actor List</a></span> </li> 
+</ul>
+</div>
+<div>
+<h1 id="ind">Welcome to the Director's page</h1>
+
+<% @directordetails.each do |directordetail| %>
+	<table class="city2">
+	<tr> <td> <b>Director Name </b> </td> <td><em><%= link_to directordetail.name,directordetail %> </td> </tr>
+	<tr> <td> <b> Director Gender </b></td> <td><%= directordetail.gender %> </td> </tr>
+	<tr> <td> <b> Director Birthday </b></td> <td><%= directordetail.dob %> </td> </tr>
+	<tr> <td><b> <%= link_to "Edit", edit_directordetail_path(directordetail) %> </b></td> <td> 
+	<b><%= link_to "Delete", directordetail , :confirm => "Are you Sure?", :method => :delete %>
+	 </b></td> </tr>
+
+
+	 </table>
+	
+
+	<% end %><br><br><br>
+</div>
+<div id="footer">
+	<p id="ind"> <%= link_to "Add a New Director", new_directordetail_path %> </p>
+</div>

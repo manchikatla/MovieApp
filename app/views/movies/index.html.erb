@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel= "stylesheet" href="movie.css" type="text/css">
+</head>
+<div id="header">
+	<ul>
+	 <li class="onetype"><span> <a href="/actordetails" > Actor List</a> </span></li>
+		<li class="onetype"><span> <a href="/directordetails" > Director List</a></span> </li> 
+	 </ul>
+	</div>
+
+	<div>
+<h1 id="ind"> Welcome to Movies Page </h1>
+
+	<% @movies.each do |movie| %>
+	<table class="city">
+	<tr> <td > <b>Movie Title</b> </td> <td><em> <%=  link_to movie.title, movie %> </em>  </td> </tr>
+	<tr> <td><b> Movie Director </b></td> <td> <%=  link_to movie.director, directordetails_path %>  </td> </tr>
+	<tr> <td> <b>Movie Actor </b></td> <td> <%= link_to movie.actor, actordetails_path %>  </td> </tr>
+	<tr> <td> <b>Movie Released date </b> </td> <td><%= movie.year %>  </td> </tr>
+	<tr> <td>  <b>Genre </b></td> <td><%= movie.genre %>  </td> </tr>
+	<tr> <td> <b>Runtime of the Movie </b></td> <td><%=  movie.runtime %>  </td> </tr>
+	<tr> <td> <b>Movie Rating </b></td> <td><%= movie.rating  %>  </td> </tr>
+	<tr> <td><b> <%= link_to "Edit", edit_movie_path(movie) %> </b></td> <td> 
+		<b><%= link_to "Delete", movie , :confirm => "Are you Sure?", :method => :delete %>
+	 </b></td> </tr>
+	 </table>
+
+
+	
+<% end %>
+
+</div>
+<div id="footer">
+<p id="index"><%= link_to "Add a New Movie",new_movie_path %>  <p>
+</div>

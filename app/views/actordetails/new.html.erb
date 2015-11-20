@@ -1,0 +1,35 @@
+
+<div class="formstyle">
+	<h1> Add a New Actor</h1>
+<%= form_for @actordetail do |f| %>
+		<% if @actordetail.errors.any? %>
+			<h2> Errors: </h2>
+			<ul>
+				<% @actordetail.errors.full_messages.each do |message| %>
+					<li class="errorclass"> <%= message %></li>
+				<% end %>
+				</ul>
+
+				<% end %>
+	<p class="formlabel">
+		<%= f.label :Actor_Name %>
+		<%= f.text_field :name %> 
+	</p>
+
+	<p class="formlabel">
+		<%= f.label :Gender %>
+		<%= f.text_field :gender %> 
+	</p>
+
+	<p class="formlabel">
+		<%= f.label :BirthDay %>
+		<%= f.text_field :dob %> 
+	</p>
+	
+
+	<p class="formlabel">
+		<%= f.submit "Add a New Actor" %><br>
+		 
+	</p>
+	<% end %>
+</div>

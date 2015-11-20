@@ -1,0 +1,36 @@
+<div class="formstyle">
+<h1> Edit the Director</h1>
+
+<%= form_for @directordetail do |f| %>
+		<% if @directordetail.errors.any? %>
+			<h2> Errors: </h2>
+			<ul>
+				<% @directordetail.errors.full_messages.each do |message| %>
+					<li class="errorclass"> <%= message %></li>
+				<% end %>
+				</ul>
+
+				<% end %>
+	<p class="formedit">
+		<%= f.label :Director_Name %>
+		<%= f.text_field :name %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Gender %>
+		<%= f.text_field :gender %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :BirthDay %>
+		<%= f.text_field :dob %> 
+	</p>
+
+	
+
+	<p class="formedit">
+		<%= f.submit "Edit Director" %><br>
+		 
+	</p>
+	<% end %>
+</div>

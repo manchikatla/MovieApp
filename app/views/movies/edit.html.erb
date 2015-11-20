@@ -1,0 +1,55 @@
+<div class="formstyle">
+<h1> Edit Movie </h1> 
+
+<%= form_for @movie do |f| %>
+
+<% if @movie.errors.any? %>
+			<h2> Errors: </h2>
+			<ul>
+				<% @movie.errors.full_messages.each do |message| %>
+					<li class="errorclass"> <%= message %></li>
+				<% end %>
+				</ul>
+
+				<% end %>
+	<p class="formedit">
+		<%= f.label :Movie_Title %>
+		<%= f.text_field :title %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_Director %>
+		<%= f.text_field :director %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_Actor %>
+		<%= f.text_field :actor %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_year %>
+		<%= f.text_field :year %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_Genre %>
+		<%= f.text_field :genre %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_Runtime %>
+		<%= f.text_field :runtime %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.label :Movie_Rating %>
+		<%= f.text_field :rating %> 
+	</p>
+
+	<p class="formedit">
+		<%= f.submit "Update Movie" %><br>
+		 
+	</p>
+	<% end %>
+</div>

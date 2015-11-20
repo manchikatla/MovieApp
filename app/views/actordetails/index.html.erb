@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel= "stylesheet" href="vivek.css" type="text/css">
+</head>
+
+<div id="header"> 
+	<ul>
+	 <li class="onetype"><span><a href="/movies" > Movies List</a> </span></li>
+	 <li class="onetype"><span><a href="/directordetails"> Director List </a> </span></li>
+	</ul>
+</div>
+<div id="contentactor">
+
+<h1 id="ind"> Welcome to the Actors Page</h1>
+
+
+<% @actordetails.each do |actordetail| %>
+
+	<table class="city1">
+	<tr> <td> <b>Actor Name </b> </td> <td><em><%=  link_to actordetail.name, actordetail %> </td> </tr>
+	<tr> <td> <b> Actor Gender </b></td> <td><%= actordetail.gender %> </td> </tr>
+	<tr> <td> <b> Actor Birthday </b></td> <td><%= actordetail.dob %> </td> </tr>
+	<tr> <td><b> <%=link_to "Edit", edit_actordetail_path(actordetail) %> </b></td> <td> 
+		<b><%= link_to "Delete", actordetail , :confirm => "Are you Sure?", :method => :delete %>
+	 </b></td> </tr>
+
+	 </table>
+	
+
+	<% end %><br><br><br>
+</div>
+<div id="footer">
+	<p id="index"> <%= link_to "Add a New Actor", new_actordetail_path %> </p>
+</div>
+
